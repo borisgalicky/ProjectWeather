@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>WeatherInfo.com</title>
+<link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="script.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body bgcolor="#E5E5FF">
+    <div id="main">
+       <h1 id="title">Weather Info</h1>
+        <table id="table">
+           <tr>
+               <td>City: <input id="city" type="text" size="15"></td>
+               <td>&nbsp;</td>
+               <td>Country code: <input id="country_code" type="text" size="4"></td>
+            </tr>
+            <tr>
+                <td><div id="err_city"></div></td>
+                <td></td>
+                <td><div id="err_code"></div></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" id="details">Show details</td>
+                <td>&nbsp;</td>
+                <td><button id="get_button"><label id="get_text">Get weather data</label></button></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

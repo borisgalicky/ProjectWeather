@@ -1,0 +1,36 @@
+#main{
+margin-top: 0px;
+}
+
+#title{
+text-align: center;
+font-family: Calibri;
+font-size: 40px;
+}
+
+#table{
+margin: auto;
+border: 1px black solid;
+background-color: skyblue;
+font-family: Arial;
+}
+
+#get_button{
+width: 150px;
+height: 25px;
+margin-left: 5%;
+margin-top: 5px;
+border-radius: 8px;
+background-color: green;
+}
+
+#get_text{
+font-weight: 650;
+font-size: 15px;
+font-family: Arial;
+color: white;
+}
+
+#details{
+margin-left: 20%;
+}
