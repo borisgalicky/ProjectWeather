@@ -34,3 +34,28 @@ color: white;
 #details{
 margin-left: 20%;
 }
+
+#err_city{
+color: red;
+font-size: 15px;
+font-weight: bold;
+}
+
+#err_code{
+color: red;
+font-size: 15px;
+font-weight: bold;
+}
+
+#content{
+height: 500px;
+}
+
+#data_table{
+margin-top: 20px;
+margin-right:auto;
+margin-left:auto;
+border: 1px black solid;
+background-color: skyblue;
+font-family: Arial;
+}
