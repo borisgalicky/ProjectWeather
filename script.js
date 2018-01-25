@@ -1,5 +1,6 @@
 $(document).ready(function(){
     $("#get_button").click(function(){
+        $('#content').empty();
         var city=$("#city").val();
         var code=$("#country_code").val();
         if(city.length>1){
@@ -18,15 +19,15 @@ $(document).ready(function(){
         else{
         $("#err_code").html("Incorrect code!");
         }
-  
+        if(navigator.onLine==true){
+        console.log(navigator.onLine);
         $.ajax({
             url:link,
             data: {format: 'json'},
-            error : function(){
-            $("#content").html("<div id='err_msg'><b>Error has occured!</b><br>Weather service is not available right now.</br><b>We're sorry</b> for inconvenience.</div>");
+            error: function(){
             },
             dataType: 'json',
-            success : function(data){
+            success: function(data){
                 $('#content').empty();
                 var table = $("<table/>");
                 table.attr("id","data_table");
@@ -79,7 +80,15 @@ $(document).ready(function(){
                 table.append(tr);
                 $('#content').append(table);
             },
-            type: 'GET'
-               });
-          })
+            type: 'GET'  
+            });
+            }
+            else{
+               $("#content").html("<div id='err_msg'><b>Error has occured!</b><br>Weather service is not available right now.</br><b>We're sorry</b> for inconvenience.</div>");
+                $("#err_city").html("");
+                $("#err_code").html("");
+                console.log(navigator.onLine);
+            }
+        
+    })
 });
