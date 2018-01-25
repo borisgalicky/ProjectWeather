@@ -52,10 +52,18 @@ height: 500px;
 }
 
 #data_table{
+width: 390px;
 margin-top: 20px;
 margin-right:auto;
 margin-left:auto;
 border: 1px black solid;
 background-color: skyblue;
 font-family: Arial;
+}
+
+#err_msg{
+margin-top: 15px;
+text-align: center;
+font-family: Arial;
+font-size: 15px;
 }
