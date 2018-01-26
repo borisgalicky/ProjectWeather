@@ -20,12 +20,23 @@ $(document).ready(function(){
         $("#err_code").html("Incorrect code!");
         }
         if(navigator.onLine==true){
+        var request;
+        if(window.XMLHttpRequest){
+        request = new XMLHttpRequest();
+        }
+        else{
+        request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        request.open('GET', link, false);
+        request.send(); 
+        if(request.status === 404){
+        $("#content").html("<div id='err_city_exist'>Entered city <b>doesn't exist</b> in selected country.</div>");
+        }
         console.log(navigator.onLine);
         $.ajax({
             url:link,
             data: {format: 'json'},
-            error: function(){
-            },
+            error: function(){},
             dataType: 'json',
             success: function(data){
                 $('#content').empty();
@@ -84,11 +95,18 @@ $(document).ready(function(){
             });
             }
             else{
-               $("#content").html("<div id='err_msg'><b>Error has occured!</b><br>Weather service is not available right now.</br><b>We're sorry</b> for inconvenience.</div>");
+               $("#content").html("<div id='err_net'><b>Error has occured!</b><br>Weather service is not available right now.</br><b>We're sorry</b> for inconvenience.</div>");
                 $("#err_city").html("");
                 $("#err_code").html("");
                 console.log(navigator.onLine);
             }
+            /*else{
+                document.addEventListener("offline",function noInternet(){
+                $("#content").html("<div id='err_net'><b>Error has occured!</b><br>Weather service is not available right now.</br><b>We're sorry</b> for inconvenience.</div>");
+                },false);
+                $("#err_city").html("");
+                $("#err_code").html("");
+            }*/
         
     })
 });

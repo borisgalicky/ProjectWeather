@@ -48,6 +48,7 @@ font-weight: bold;
 }
 
 #content{
+margin-top:10px;
 height: 500px;
 }
 
@@ -61,7 +62,14 @@ background-color: skyblue;
 font-family: Arial;
 }
 
-#err_msg{
+#err_net{
+margin-top: 15px;
+text-align: center;
+font-family: Arial;
+font-size: 15px;
+}
+
+#err_city_exist{
 margin-top: 15px;
 text-align: center;
 font-family: Arial;
